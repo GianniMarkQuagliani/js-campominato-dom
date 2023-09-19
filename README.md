@@ -14,9 +14,4 @@
 - Restituisco l'elemento quadrato appena creato
 
 # Bonus
-- Inizio con il creare una select in HTML
-- Seleziono la select e il pulsante "Genera"
-- Aggiungo un event listener al pulsante "Genera"
-- Faccio il reset della griglia all'avvio
-- Imposto la dimensione della griglia in base alla difficoltà
-- Genero la griglia in base alla dimensione calcolata
+- Creo variabili globali per il container principale, lo stato del gioco e la lista delle posizioni delle bombe
