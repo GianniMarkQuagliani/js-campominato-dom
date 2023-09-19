@@ -15,3 +15,6 @@
 
 # Bonus
 - Creo variabili globali per il container principale, lo stato del gioco e la lista delle posizioni delle bombe
+- Definisco una funzione `initializeGame()` per inizializzare il gioco quando viene cliccato il pulsante "Genera":
+- resetto il contenuto del container, reimposto `gameIsOver` su `false` e svuoto `bombPositions`.
+- Chiamo la funzione `createGrid()` per generare la griglia
