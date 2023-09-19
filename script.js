@@ -102,10 +102,29 @@ function generateGrid() {
             square.classList.add('bomb'); // Aggiungo la classe 'bomb' ai quadrati con le bombe
         }
 
+        let isClicked = false; // Flag per tenere traccia se la cella è stata cliccata
+        
         square.addEventListener('click', function () {
             this.classList.toggle('clicked');
             console.log(this.className);
             console.log(this.innerText);
+
+            if (isClicked) {
+                // Se la cella è già stata cliccata, esco dalla funzione
+                return;
+            }
+
+            if (bombPositions.includes(i)) {
+                // Se la cella contiene una bomba, colorala di rosso
+                this.style.backgroundColor = 'red';
+                //  Mostro un messaggio di sconfitta
+                console.log('Hai perso! Game Over');
+            } else {
+                // Se la cella non contiene una bomba, si colora di azzurro
+                this.style.backgroundColor = 'blue';
+                // Imposto la cella come cliccata
+                isClicked = true;
+            }
         });
         container.append(square);
     }
