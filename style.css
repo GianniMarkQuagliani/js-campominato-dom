@@ -55,8 +55,3 @@ body{
 .square.clicked span{
     display: block;
 }
-
-.square.bomb {
-    background-color: red;
-    color: black;
-}
