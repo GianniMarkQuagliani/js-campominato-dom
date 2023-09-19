@@ -80,7 +80,7 @@ function generateGrid() {
         gridSize = 7;
     }
 
-    const numBombs = calculateNumBombs(selectedDifficulty); // Calcolo il numero di bombe in base alla difficoltà
+     
     
     // Resetto la griglia prima di generarla nuovamente
     reset();
@@ -88,6 +88,7 @@ function generateGrid() {
     // Calcolo la larghezza dei quadrati in base alla dimensione della griglia
     const squareSize = 100 / gridSize;
 
+    const numBombs = 16; // Numero fisso di bombe
     const bombPositions = generateBombs(numBombs, gridSize); // Ottengo la posizione delle bombe
 
     // Genera la griglia in base alla dimensione calcolata
@@ -115,7 +116,7 @@ function generateGrid() {
 // - numBombs: il numero di bombe da generare.
 // - gridSize: la dimensione della griglia (griglia quadrata gridSize x gridSize).
 function generateBombs(numBombs, gridSize) {
-    bombPositions = [];
+    const bombPositions = [];
 
     // Continuo a generare posizioni casuali finché il numero di bombe generato non raggiunge numBombs.
     while (bombPositions.length < numBombs) {
@@ -123,7 +124,7 @@ function generateBombs(numBombs, gridSize) {
         const randomPosition = Math.floor(Math.random() * gridSize * gridSize) + 1;
 
         // Verifico se la posizione casuale è già stata scelta e, in caso contrario, lo aggiungo alla lista delle posizioni delle bombe.
-        if (!bombPositions.includes(randomPosition)) {
+        if (!bombPositions.includes(randomPosition) && randomPosition <= gridSize * gridSize) {
             bombPositions.push(randomPosition);
         }
     }
@@ -132,21 +133,3 @@ function generateBombs(numBombs, gridSize) {
     return bombPositions;
 }
 
-// Calcolo il numero di bombe in base al livello di difficoltà selezionato.
-// - difficulty: il livello di difficoltà scelto dall'utente (1, 2 o 3).
-function calculateNumBombs(difficulty) {
-    switch (difficulty) {
-        case 1:
-            // 20 bombe per il livello di difficoltà 1.
-            return 20;
-        case 2:
-            // 15 bombe per il livello di difficoltà 2.
-            return 15;
-        case 3:
-            // 10 bombe per il livello di difficoltà 3.
-            return 10;
-        default:
-            // Valore predefinito: 20 bombe se il livello di difficoltà non è valido.
-            return 20; // Valore predefinito
-    }
-}
