@@ -1,0 +1,62 @@
+/* Reset dei margini e del padding per tutti gli elementi */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Imposto il font predefinito per il corpo del documento */
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* Creo un wrapper principale per centrare il contenuto verticalmente ed orizzontalmente */
+.main-wrapper{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: cadetblue;
+}
+
+/* Creo un container per il layout flessibile dei quadrati */
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+    height: 600px;
+    background-color: brown;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Stile dei quadrati all'interno del container */
+.square{
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    color: white;
+    aspect-ratio: 1 / 1;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+/* Quando una cella è cliccata e ha la classe 'clicked', cambia lo stile */
+.square.clicked{
+    background-color: cadetblue;
+}
+
+/* Nasconde il testo all'interno delle celle  */
+.square span{
+    display: none;
+}
+
+/* Quando una cella è cliccata e ha la classe 'clicked', mostra il testo */
+.square.clicked span{
+    display: block;
+}
+
+.square.bomb {
+    background-color: red;
+    color: black;
+}
